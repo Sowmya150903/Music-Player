@@ -1,38 +1,184 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Music Player Container */
+.music-player {
+  background: #1e1e2e;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 600px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Track Info Section */
+.track-info {
+  display: flex;
   align-items: center;
+  margin-bottom: 15px;
+}
+
+.album-art {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-right: 15px;
+}
+
+.track-info h2 {
+  font-size: 18px;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.track-info p {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin: 5px 0 0;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.controls button {
+  background: #4a90e2;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: #333;
+  border-radius: 5px;
+  height: 8px;
+  width: 100%;
+  margin: 15px 0;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress {
+  background: linear-gradient(90deg, #4a90e2, #9013fe);
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.actions button {
+  background: #333;
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.actions button.active {
+  background: #9013fe;
+  border: 2px solid #4a90e2;
+}
+
+.actions button:hover {
+  background: #4a90e2;
+}
+
+/* Playlist */
+.playlist {
+  margin-top: 20px;
+  background: #1e1e2e;
+  padding: 15px;
+  border-radius: 10px;
   color: white;
+  max-height: 250px;
+  /* Allows the playlist to scroll */
+  overflow-y: auto;
+  /* Enables vertical scrolling */
 }
 
-.App-link {
-  color: #61dafb;
+.playlist h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #ff758c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playlist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.playlist li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.playlist li:hover {
+  background: #333;
+}
+
+.playlist li.active {
+  background: #ff758c;
+  color: white;
+  font-weight: bold;
+}
+
+.playlist li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.playlist li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist li div p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #ccc;
 }
